@@ -1,0 +1,400 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* ============================= */
+    /*===== General =====*/
+/* ============================= */
+body {
+  background-color: #FFF;
+}
+.bg-cream {
+  background-color: bisque;
+  padding-bottom: 100px;
+}
+.mr-t-20 {
+  margin-top: 20px;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #FFF;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #FFF;
+}
+.btn-wave,
+button.btn-wave {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+.btn-wave:hover,
+.btn-wave:active,
+.btn-wave:focus,
+.btn-wave.hover {
+  background-color: #2bbbad;
+  color: #FFF !important;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+  outline: none !important;
+}
+
+/* ============================= */
+    /*===== Login Page =====*/
+/* ============================= */
+.form-control {
+  border-radius: 0 !important;
+}
+.register-page .btn-default {
+  float: left;
+}
+.user-register-heading {
+  text-transform: uppercase;
+  font-size: 17px;
+  color: #424242;
+  letter-spacing: 0.6px;
+}
+.remember-me {
+  color: #424242;
+}
+.login-page {
+  width: 360px;
+  margin: auto;
+  margin-top: 4%;
+  border-radius: 4px;
+  padding: 10px 45px 45px;
+  background-color: #FFF;
+  box-shadow: 0 7px 24px 2px rgba(0, 0, 0, 0.1), 5px 7px 17px 2px rgba(0, 0, 0, 0.15);
+}
+.login-logo {
+  margin: 0 auto;
+}
+.form ::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.6) !important;
+}
+.login-page .logo {
+  margin-bottom: 20px;
+}
+.login-page .form {
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+}
+.login-page .form input {
+  outline: 0;
+  background: #F2F2F2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  font-size: 14px;
+}
+.login-form .checkbox {
+  text-align: left;
+  margin-bottom: 26px;
+}
+.login-form .checkbox label {
+  margin-top: 4px;
+  padding: 0 13px 0 2px;
+  vertical-align: middle;
+}
+.login-form .checkbox input {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+.form button {
+  padding: 8px 0;
+  width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+/* ============================= */
+    /*===== Register Page =====*/
+/* ============================= */
+.register-page {
+  background-color: #424242;
+  padding: 20px 45px 45px;
+  border-radius: 4px;
+  margin-top: 4%;
+  box-shadow: 0 7px 24px 2px rgba(0, 0, 0, 0.1), 5px 7px 5px 0 rgba(0, 0, 0, 0.15);
+}
+.register-page label {
+  color: #FFF;
+}
+.register-page .form-control::-webkit-input-placeholder {
+  opacity: 0.8;
+}
+.register-page .form-control {
+  background-color: #F2F2F2;
+}
+.register-page .user-register-heading {
+  font-size: 22px;
+}
+.register-page .logo img {
+  margin: 0 auto;
+}
+.user-register-heading {
+  font-weight: 400;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #F2F2F2;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+.register-page .btn-group {
+  width: 100%;
+}
+.register-page .btn {
+  width: 48%;
+  margin: 20px;
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  /*display: inline-block;*/
+}
+@media (max-width: 767px) {
+  .register-page .btn {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    /*display: inline-block;*/
+  }
+}
+.logo-main-block {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.logo-main-block img {
+  margin: 0 auto;
+}
+
+.navbar-header .heading {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFF;
+}
+.nav-bar {
+  padding: 7px 0 3px;
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.08);
+  background-color: #424242;
+}
+.home-main-block blockquote {
+  margin-top: 50px;
+  margin-left: 120px;
+  width: 60%;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1);
+  border-color: #424242;
+}
+@media (max-width: 992px) {
+  .home-main-block blockquote {
+    margin-left: 0;
+  }
+}
+.main-block-heading {
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.home-main-block .btn_block {
+  margin-top: 50px;
+  text-align: center;
+  margin-left: -15px;
+}
+.home-main-block .btn_block .btn {
+  padding: 10px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+#question_block {
+  padding: 10px 0 30px;
+}
+.question {
+  margin-bottom: 15px;
+}
+.myQuestion {
+  display: none;
+}
+.myQuestion.active {
+  display: block;
+}
+.myQuestion blockquote {
+  margin: 20px 0 32px;
+}
+.myQuestion form {
+  margin-left: 5px;
+}
+.myQuestion input {
+  margin-bottom: 15px;
+}
+.myQuestion span:nth-child(odd) {
+  color: black;
+}
+.myQuestion span {
+  font-size: 16px;
+  margin-left: 5px;
+}
+.myQuestion .btn-block {
+  margin: 25px 20px 0 10px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 2px;
+  padding: 4px 0;
+}
+.myQuestion .code {
+  background-color: #f1f1f1;
+  padding: 12px;
+}
+#clock span {
+  margin-top: 4px;
+  color: #FFF;
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+/*======== Session Modal ========*/
+.sessionmodal {
+  visibility: hidden;
+  position: fixed;
+  top: -120px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 400px;
+  border-radius: 2px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  box-shadow: 3px 4px 14px 0 rgba(0,0,0,0.12);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  transition-delay: 0.3s;
+  text-align: center;
+  z-index: 9999999999;
+  font-weight: 600;
+}
+.sessionmodal.active {
+  visibility: visible;
+  top: 10px;
+}
+.navbar-collapse.collapse {
+  display: block !important;
+}
+@media (max-width: 992px){
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #FFF;
+      background-color: transparent;
+  }
+  .main-block-heading {
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
+}
+
+/*======== Quiz Main Block ======*/
+.topic-block {
+  margin-bottom: 25px !important;
+}
+.quiz-main-block {
+  margin-top: 30px;
+}
+.card {
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: rgba(50, 50, 50, 0.8);
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+}
+.white-text {
+    color: #fff !important;
+}
+.card .card-content .card-title {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+.card .card-content p {
+    margin: 0;
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+}
+.card .card-action:last-child {
+    border-radius: 0 0 2px 2px;
+}
+.card .card-action {
+    position: relative;
+    border-top: 1px solid rgba(160,160,160,0.4);
+    padding: 8px 24px;
+}
+.card .card-action a {
+  color: #FFF;
+}
+.topic-detail {
+  margin-top: 13px;
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+.topic-detail li {
+  margin-bottom: 6px;
+  position: relative;
+}
+.topic-detail li .fa {
+  position: absolute;
+  right: 0;
+  top: 3.5px;
+  color: #424242;
+}
+.result-table {
+  margin: 40px 0;
+}
+.question-block-tabs {
+  padding: 20px 0;
+}
+.question-block-tabs .tab-content {
+  padding: 20px 0;
+}

@@ -1,0 +1,18 @@
+/*
+Version: 1.0.0
+You can add your custom styling here
+*/
+
+.wt-footer {
+    background: #305787;
+}
+
+.wt-headereleven .wt-logo {
+    margin: 10px;
+}
+
+/*exam*/
+
+.navbar .nav-bar .container {
+    display: block;
+}
