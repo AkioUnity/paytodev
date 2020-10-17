@@ -30,6 +30,17 @@ use Carbon\Carbon;
  */
 class Job extends Model
 {
+     /**
+     * Protected Date
+     *
+     * @access protected
+     * @var    array $dates
+     */
+    protected $dates = [
+        'expiry_date',
+        'created_at',
+        'updated_at',
+    ];
     /**
      * Get all of the categories for the job.
      *
@@ -338,8 +349,8 @@ class Job extends Model
             $filters['category'] = $search_categories;
             foreach ($search_categories as $key => $search_category) {
                 $categor_obj = Category::where('slug', $search_category)->first();
-                $category = Category::find($categor_obj->id);
-                if (!empty($category->jobs)) {
+                $category = !empty($categor_obj) && !empty($categor_obj->id) ? Category::find($categor_obj->id) : '';
+                if (!empty($category) && !empty($category->jobs)) {
                     $category_jobs = $category->jobs->pluck('id')->toArray();
                     foreach ($category_jobs as $id) {
                         $job_id[] = $id;
@@ -392,7 +403,11 @@ class Job extends Model
         if ($display_completed_projects == 'false') {
             $jobs = $jobs->where('status', '!=', 'completed');
         }
-        $jobs = $jobs->orderByRaw("is_featured DESC, updated_at DESC")->paginate(7)->setPath('');
+        if (Schema::hasColumn('jobs', 'expiry_date')) {
+            $jobs = $jobs->WhereNull('expiry_date')->orWhereDate('expiry_date', '>', date('Y-m-d'));
+        }
+//        $jobs = $jobs->orderByRaw("is_featured DESC, updated_at DESC")->paginate(7)->setPath('');
+        $jobs = $jobs->orderByRaw("updated_at DESC")->paginate(7)->setPath('');
         foreach ($filters as $key => $filter) {
             $pagination = $jobs->appends(
                 array(

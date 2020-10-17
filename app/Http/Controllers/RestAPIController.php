@@ -10,7 +10,7 @@
 
  */
 namespace App\Http\Controllers;
-
+//test3
 use Illuminate\Http\Request;
 use App\User;
 use App\Helper;
@@ -455,7 +455,7 @@ class RestAPIController extends Controller
      */
     public function updateWishlist(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -495,7 +495,7 @@ class RestAPIController extends Controller
      */
     public function submitProposal(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -960,7 +960,7 @@ class RestAPIController extends Controller
      */
     public function updateProfile(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -1218,7 +1218,7 @@ class RestAPIController extends Controller
      */
     public function storeReport(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -1469,7 +1469,7 @@ class RestAPIController extends Controller
      */
     public function sendProjectOffers(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -1550,7 +1550,7 @@ class RestAPIController extends Controller
      */
     public function sendResetLinkEmail(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -1659,7 +1659,7 @@ class RestAPIController extends Controller
      */
     public function postJob(Request $request)
     {
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $json['type']    = 'error';
             $json['message'] = $server->getData()->message;
@@ -1696,29 +1696,29 @@ class RestAPIController extends Controller
         $address = !empty($request['address']) ? $request['address'] : null;
         $longitude = !empty($request['longitude']) ? $request['longitude'] : null;
         $latitude = !empty($request['latitude']) ? $request['latitude'] : null;
-        $current_user = $request['user_id'];
+        $current_user = $random_number = rand(400, 1055); //$request['user_id'];
         $package_item = Item::where('subscriber', $current_user)->first();
         $package = Package::find($package_item->product_id);
         $option = !empty($package->options) ? unserialize($package->options) : '';
-        $expiry = !empty($option) ? $package_item->created_at->addDays($option['duration']) : '';
+        $expiry = !empty($option) ? $package_item->updated_at->addDays($option['duration']) : '';
         $expiry_date = !empty($expiry) ? Carbon::parse($expiry)->format('M d, Y') : '';
         $current_date = Carbon::now()->format('M d, Y');
         $posted_jobs = Job::where('user_id', $current_user)->count();
         $posted_featured_jobs = Job::where('user_id', $current_user)->where('is_featured', 'true')->count();
         $size = !empty($request['size']) ? $request['size'] : '';
-        if (!empty($package) && $current_date <= $expiry_date) {
-            if ($request['is_featured'] == 'true') {
-                if ($posted_featured_jobs >= intval($option['featured_jobs'])) {
-                    $json['type'] = 'error';
-                    $json['message'] = trans('lang.sorry_can_only_feature')  . ' ' . $option['featured_jobs'] . ' ' . trans('lang.jobs_acc_to_pkg');
-                    return Response::json($json, 203);
-                }
-            }
-            if ($posted_jobs >= intval($option['jobs'])) {
-                $json['type'] = 'error';
-                $json['message'] = trans('lang.sorry_cannot_submit') . ' ' . $option['jobs'] . ' ' . trans('lang.jobs_acc_to_pkg');
-                return Response::json($json, 203);
-            } else {
+//        if (!empty($package) && $current_date <= $expiry_date) {
+//            if ($request['is_featured'] == 'true') {
+//                if ($posted_featured_jobs >= intval($option['featured_jobs'])) {
+//                    $json['type'] = 'error';
+//                    $json['message'] = trans('lang.sorry_can_only_feature')  . ' ' . $option['featured_jobs'] . ' ' . trans('lang.jobs_acc_to_pkg');
+//                    return Response::json($json, 203);
+//                }
+//            }
+//            if ($posted_jobs >= intval($option['jobs'])) {
+//                $json['type'] = 'error';
+//                $json['message'] = trans('lang.sorry_cannot_submit') . ' ' . $option['jobs'] . ' ' . trans('lang.jobs_acc_to_pkg');
+//                return Response::json($json, 203);
+//            } else {
                 $random_number = Helper::generateRandomCode(8);
                 $code = strtoupper($random_number);
                 $location = $request['country'];
@@ -1763,7 +1763,7 @@ class RestAPIController extends Controller
                 $job->skills()->detach();
                 if (!empty($skills)) {
                     foreach ($skills as $skill) {
-                        $job->skills()->attach($skill);
+                        $job->skills()->attach(Skill::where('title', $skill)->first()->id);
                     }
                 }
                 $job = Job::find($job_id);
@@ -1775,47 +1775,48 @@ class RestAPIController extends Controller
                 // Send Email
                 $user = User::find($current_user);
                 //send email to admin
-                if (!empty(config('mail.username')) && !empty(config('mail.password'))) {
-                    $job = Job::where('user_id', $current_user)->latest()->first();
-                    $email_params = array();
-                    $new_posted_job_template = DB::table('email_types')->select('id')->where('email_type', 'admin_email_new_job_posted')->get()->first();
-                    $new_posted_job_template_employer = DB::table('email_types')->select('id')->where('email_type', 'employer_email_new_job_posted')->get()->first();
-                    if (!empty($new_posted_job_template->id) || !empty(new_posted_job_template_employer)) {
-                        $template_data = EmailTemplate::getEmailTemplateByID($new_posted_job_template->id);
-                        $template_data_employer = EmailTemplate::getEmailTemplateByID($new_posted_job_template_employer->id);
-                        $email_params['job_title'] = $job->title;
-                        $email_params['posted_job_link'] = url('/job/' . $job->slug);
-                        $email_params['name'] = Helper::getUserName($current_user);
-                        $email_params['link'] = url('profile/' . $user->slug);
-                        $admin_mail = User::role('admin')->select('email')->pluck('email')->first();
-                        Mail::to(env('MAIL_FROM_ADDRESS'))
-                            ->send(
-                                new AdminEmailMailable(
-                                    'admin_email_new_job_posted',
-                                    $template_data,
-                                    $email_params
-                                )
-                            );
-                        if (!empty($user->email)) {
-                            Mail::to($user->email)
-                                ->send(
-                                    new EmployerEmailMailable(
-                                        'employer_email_new_job_posted',
-                                        $template_data_employer,
-                                        $email_params
-                                    )
-                                );
-                        }
-                    }
-                }
-            }
+//                if (!empty(config('mail.username')) && !empty(config('mail.password'))) {
+//                    $job = Job::where('user_id', $current_user)->latest()->first();
+//                    $email_params = array();
+//                    $new_posted_job_template = DB::table('email_types')->select('id')->where('email_type', 'admin_email_new_job_posted')->get()->first();
+//                    $new_posted_job_template_employer = DB::table('email_types')->select('id')->where('email_type', 'employer_email_new_job_posted')->get()->first();
+//                    if (!empty($new_posted_job_template->id) || !empty(new_posted_job_template_employer)) {
+//                        $template_data = EmailTemplate::getEmailTemplateByID($new_posted_job_template->id);
+//                        $template_data_employer = EmailTemplate::getEmailTemplateByID($new_posted_job_template_employer->id);
+//                        $email_params['job_title'] = $job->title;
+//                        $email_params['posted_job_link'] = url('/job/' . $job->slug);
+//                        $email_params['name'] = Helper::getUserName($current_user);
+//                        $email_params['link'] = url('profile/' . $user->slug);
+//                        $admin_mail = User::role('admin')->select('email')->pluck('email')->first();
+//                        Mail::to(env('MAIL_FROM_ADDRESS'))
+//                            ->send(
+//                                new AdminEmailMailable(
+//                                    'admin_email_new_job_posted',
+//                                    $template_data,
+//                                    $email_params
+//                                )
+//                            );
+//                        if (!empty($user->email)) {
+//                            Mail::to($user->email)
+//                                ->send(
+//                                    new EmployerEmailMailable(
+//                                        'employer_email_new_job_posted',
+//                                        $template_data_employer,
+//                                        $email_params
+//                                    )
+//                                );
+//                        }
+//                    }
+//                }
+//            }
             $json['type'] = 'success';
+            $json['id'] = $job_id;
             return Response::json($json, 200);
-        } else {
-            $json['type'] = 'error';
-            $json['message'] = trans('lang.need_to_purchase_pkg');
-            return Response::json($json, 203);
-        }
+//        } else {
+//            $json['type'] = 'error';
+//            $json['message'] = trans('lang.need_to_purchase_pkg').' '.$expiry_date;
+//            return Response::json($json, 203);
+//        }
     }
 
     /**
@@ -2132,7 +2133,7 @@ class RestAPIController extends Controller
     public function postService(Request $request)
     {
         $json = array();
-        $server = Helper::worketicIsDemoSiteAjax();
+        $server = Helper::amglyIsDemoSiteAjax();
         if (!empty($server)) {
             $response['message'] = $server->getData()->message;
             return $response;
