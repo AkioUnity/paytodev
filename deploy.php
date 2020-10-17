@@ -6,16 +6,26 @@
 
 	 */
 
-	// The commands
-	$commands = array(
-		'echo $PWD',
-		'whoami',
-		'git pull',
-		'git status',
-		'git submodule sync',
-		'git submodule update',
-		'git submodule status',
-	);
+    // The commands
+    $commands = array(
+    //		'echo $PWD',
+    //		'whoami',
+        'git pull',
+        'git status',
+        'git submodule sync',
+        'git submodule update',
+        'git submodule status',
+    );
+
+    if( $_GET["push"]) {
+        $commands = array(
+            'whoami',
+            'git add .',
+            'git commit -m "'.$_GET["push"].'"',
+            'git push',
+            'git status'
+        );
+    }
 
 	// Run the commands for output
 	$output = '';

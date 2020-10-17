@@ -5138,4 +5138,22 @@ class Helper extends Model
 
         return '?v=' . $version;
     }
+
+
+    public static function amglyIsDemoSiteAjax($message = '')
+    {
+        $message = !empty($message) ? $message : trans('lang.restricted_text');
+        if (isset($_SERVER["SERVER_NAME"]) && $_SERVER["SERVER_NAME"] === 'debug.com') {
+            return response()->json(['message' => $message]);
+        }
+    }
+
+    public static function amglyIsDemoSite($message = '')
+    {
+        $json = array();
+        $message = !empty($message) ? $message : trans('lang.restricted_text');
+        if (isset($_SERVER["SERVER_NAME"]) && $_SERVER["SERVER_NAME"] === 'debug.com') {
+            return $message;
+        }
+    }
 }

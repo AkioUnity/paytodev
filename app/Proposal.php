@@ -2,12 +2,7 @@
 /**
  * Class Proposal
  *
- * @category Worketic
- *
- * @package Worketic
- * @author  Amentotech <theamentotech@gmail.com>
- * @license http://www.amentotech.com Amentotech
- * @link    http://www.amentotech.com
+* @author  An ShiWei <amg1988925@gmail.com>
  */
 namespace App;
 

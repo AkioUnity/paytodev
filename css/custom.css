@@ -16,3 +16,31 @@ You can add your custom styling here
 .navbar .nav-bar .container {
     display: block;
 }
+
+.payment-form li{
+    list-style: none;
+}
+
+.milestone_list li{
+    border: 1px solid #ddd;
+    background: #e5fad2;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.milestone_list ul {
+    margin-top: 10px;
+    display: inline-block;
+    width: 98%;
+}
+
+.legend{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.milestone_list span{
+    display: inline-block;
+}

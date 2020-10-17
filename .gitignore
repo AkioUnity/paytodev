@@ -21,3 +21,10 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+database/
+installer/
+storage/
+
+.idea/
+composer.lock

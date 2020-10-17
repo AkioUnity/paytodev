@@ -119,20 +119,9 @@
                                             </span>
                                         </li>
                                     </ul>
-                                    {{--milestones--}}
-                                    <fieldset>
-                                        <legend>Milestones:</legend>
-                                        <div class="form-group">
-                                            <div class="form-group-holder">
-                                                <input type="text" class="form-control" placeholder="milestone name" id="milestone_name">
-                                                <input type="number" class="form-control" min="0" placeholder="price" id="milestone_price">
-                                            </div>
-                                        </div>
-                                        <div class="form-group wt-btnarea">
-                                            <button v-on:click="addMilestone">Add Milestone</button>
-                                        </div>
-                                    </fieldset>
+                                    @include('front-end.jobs.milestone')
                                 </div>
+
 
                                 <div class="wt-formtheme wt-formproposal">
                                     <fieldset>

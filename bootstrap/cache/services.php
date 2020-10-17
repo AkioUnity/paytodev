@@ -56,10 +56,9 @@
     52 => 'App\\Providers\\RouteServiceProvider',
     53 => 'Collective\\Html\\HtmlServiceProvider',
     54 => 'App\\Providers\\AmentotechServiceProvider',
-    55 => 'Cartalyst\\Stripe\\Laravel\\StripeServiceProvider',
-    56 => 'Spatie\\Permission\\PermissionServiceProvider',
-    57 => 'Intervention\\Image\\ImageServiceProvider',
-    58 => 'Spatie\\JsonApiPaginate\\JsonApiPaginateServiceProvider',
+    55 => 'Spatie\\Permission\\PermissionServiceProvider',
+    56 => 'Intervention\\Image\\ImageServiceProvider',
+    57 => 'Spatie\\JsonApiPaginate\\JsonApiPaginateServiceProvider',
   ),
   'eager' => 
   array (
@@ -99,10 +98,9 @@
     33 => 'App\\Providers\\EventServiceProvider',
     34 => 'App\\Providers\\RouteServiceProvider',
     35 => 'App\\Providers\\AmentotechServiceProvider',
-    36 => 'Cartalyst\\Stripe\\Laravel\\StripeServiceProvider',
-    37 => 'Spatie\\Permission\\PermissionServiceProvider',
-    38 => 'Intervention\\Image\\ImageServiceProvider',
-    39 => 'Spatie\\JsonApiPaginate\\JsonApiPaginateServiceProvider',
+    36 => 'Spatie\\Permission\\PermissionServiceProvider',
+    37 => 'Intervention\\Image\\ImageServiceProvider',
+    38 => 'Spatie\\JsonApiPaginate\\JsonApiPaginateServiceProvider',
   ),
   'deferred' => 
   array (
