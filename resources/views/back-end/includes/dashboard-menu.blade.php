@@ -422,12 +422,12 @@
                                 {{--</li>--}}
                             @endif
                         @endif
-                        {{--<li>--}}
-                            {{--<a href="{{{ url($role.'/saved-items') }}}">--}}
-                                {{--<i class="ti-heart"></i>--}}
-                                {{--<span>{{ trans('lang.saved_items') }}</span>--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="{{{ url($role.'/saved-items') }}}">
+                                <i class="ti-heart"></i>
+                                <span>{{ trans('lang.saved_items') }}</span>
+                            </a>
+                        </li>
                     @endif
                     <li>
                         <a href="{{ route('logout') }}"

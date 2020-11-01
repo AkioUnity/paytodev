@@ -410,7 +410,7 @@ Route::group(
 //        Route::get('profile/settings/get-manage-account', 'UserController@getManageAccountData');
 //        Route::get('profile/settings/get-user-notification-settings', 'UserController@getUserEmailNotificationSettings');
 //        Route::get('profile/settings/get-user-searchable-settings', 'UserController@getUserSearchableSettings');
-//        Route::get('{role}/saved-items', 'UserController@getSavedItems')->name('getSavedItems');
+        Route::get('{role}/saved-items', 'UserController@getSavedItems')->name('getSavedItems');
 //        Route::post('profile/get-wishlist', 'UserController@getUserWishlist');
 //        Route::post('job/add-wishlist', 'JobController@addWishlist');
 //        Route::get('proposal/{slug}/{status}', 'ProposalController@show');

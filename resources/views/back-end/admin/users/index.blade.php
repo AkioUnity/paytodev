@@ -29,6 +29,7 @@
                                         <th>{{{ trans('lang.user_name') }}}</th>
                                         <th>{{{ trans('lang.ph_email') }}}</th>
                                         <th>{{{ trans('lang.role') }}}</th>
+                                        <th>IP Address</th>
                                         <th>{{{ trans('lang.action') }}}</th>
                                     </tr>
                                 </thead>
@@ -40,6 +41,7 @@
                                                 <td>{{{ ucwords(\App\Helper::getUserName($user->id)) }}}</td>
                                                 <td>{{{ $user->email }}}</td>
                                                 <td>{{ $user->getRoleNames()->first() }}</td>
+                                                <td>{{{ $user->ip_address }}}</td>
                                                 <td>
                                                     <div class="wt-actionbtn">
                                                         <a href="javascript:void()" v-on:click.prevent="deleteUser({{$user->id}})" class="wt-deleteinfo wt-skillsaddinfo"><i class="fa fa-trash"></i></a>

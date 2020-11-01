@@ -423,12 +423,12 @@
                                 
                             <?php endif; ?>
                         <?php endif; ?>
-                        
-                            
-                                
-                                
-                            
-                        
+                        <li>
+                            <a href="<?php echo e(url($role.'/saved-items')); ?>">
+                                <i class="ti-heart"></i>
+                                <span><?php echo e(trans('lang.saved_items')); ?></span>
+                            </a>
+                        </li>
                     <?php endif; ?>
                     <li>
                         <a href="<?php echo e(route('logout')); ?>"
