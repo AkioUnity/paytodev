@@ -59,7 +59,7 @@ Route::get(
 )->name('home');
 
 
-//Route::get('articles/{category?}', 'ArticleController@articlesList')->name('articlesList');
+Route::get('articles/{category?}', 'ArticleController@articlesList')->name('articlesList');
 //Route::get('article/{slug}', 'ArticleController@showArticle')->name('showArticle');
 Route::get('profile/{slug}', 'PublicController@showUserProfile')->name('showUserProfile');
 Route::get('categories', 'CategoryController@categoriesList')->name('categoriesList');
