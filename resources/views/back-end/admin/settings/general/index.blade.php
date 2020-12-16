@@ -33,63 +33,63 @@
             </div>
         </div>
     </div>
-    <div class="wt-location wt-tabsinfo">
-        <div class="wt-tabscontenttitle">
-            <h2>{{{ trans('lang.google_map_api_key') }}}</h2>
-        </div>
-        <div class="wt-settingscontent">
-            <div class="wt-formtheme wt-userform">
-                <div class="form-group">
-                    {!! Form::text('settings[0][gmap_api_key]', e($gmap_api_key), array('class' => 'form-control', 'placeholder'=>trans('lang.api_key'))) !!}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wt-location wt-tabsinfo">
-        <div class="wt-tabscontenttitle">
-            <h2>{{{ trans('lang.language_setting') }}}</h2>
-        </div>
-        <div class="wt-settingscontent">
-            <div class="wt-formtheme wt-userform">
-                <div class="form-group">
-                    <span class="wt-select">
-                        <select class="form-control" name="settings[0][language]">
-                            @foreach ($languages as $key => $language)
-                                @php $selected = $key == $selected_language ? 'selected' : '' @endphp
-                                <option value="{{$key}}" {{$selected}}> {{$language['title']}}</option>
-                            @endforeach
-                        </select>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="wt-location wt-tabsinfo">
-        <div class="wt-tabscontenttitle">
-            <h2>{{{ trans('lang.header_style') }}}</h2>
-        </div>
-        <div class="wt-settingscontent">
-            <div class="amt-section-select amt-profile-settings">
-                <ul class="at-profile-setting__imgs">
-                    <li v-for="(style, index) in getInnerHeaderStyles()" :key="index">
-                        <input 
-                            type="radio" 
-                            name="settings[0][header_style]"  
-                            :id="'image1'+index"  
-                            :value="style.value" 
-                            :checked="style.value == '{{$selected_header}}'"
-                        >
-                        <label :for="'image1'+index">
-                            <span>
-                                <img :src='style.img' alt="Image Description">
-                                <span class="at-tick"><span><i class="fas fa-check"></i></span></span>
-                            </span>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    {{--<div class="wt-location wt-tabsinfo">--}}
+        {{--<div class="wt-tabscontenttitle">--}}
+            {{--<h2>{{{ trans('lang.google_map_api_key') }}}</h2>--}}
+        {{--</div>--}}
+        {{--<div class="wt-settingscontent">--}}
+            {{--<div class="wt-formtheme wt-userform">--}}
+                {{--<div class="form-group">--}}
+                    {{--{!! Form::text('settings[0][gmap_api_key]', e($gmap_api_key), array('class' => 'form-control', 'placeholder'=>trans('lang.api_key'))) !!}--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="wt-location wt-tabsinfo">--}}
+        {{--<div class="wt-tabscontenttitle">--}}
+            {{--<h2>{{{ trans('lang.language_setting') }}}</h2>--}}
+        {{--</div>--}}
+        {{--<div class="wt-settingscontent">--}}
+            {{--<div class="wt-formtheme wt-userform">--}}
+                {{--<div class="form-group">--}}
+                    {{--<span class="wt-select">--}}
+                        {{--<select class="form-control" name="settings[0][language]">--}}
+                            {{--@foreach ($languages as $key => $language)--}}
+                                {{--@php $selected = $key == $selected_language ? 'selected' : '' @endphp--}}
+                                {{--<option value="{{$key}}" {{$selected}}> {{$language['title']}}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                    {{--</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="wt-location wt-tabsinfo">--}}
+        {{--<div class="wt-tabscontenttitle">--}}
+            {{--<h2>{{{ trans('lang.header_style') }}}</h2>--}}
+        {{--</div>--}}
+        {{--<div class="wt-settingscontent">--}}
+            {{--<div class="amt-section-select amt-profile-settings">--}}
+                {{--<ul class="at-profile-setting__imgs">--}}
+                    {{--<li v-for="(style, index) in getInnerHeaderStyles()" :key="index">--}}
+                        {{--<input --}}
+                            {{--type="radio" --}}
+                            {{--name="settings[0][header_style]"  --}}
+                            {{--:id="'image1'+index"  --}}
+                            {{--:value="style.value" --}}
+                            {{--:checked="style.value == '{{$selected_header}}'"--}}
+                        {{-->--}}
+                        {{--<label :for="'image1'+index">--}}
+                            {{--<span>--}}
+                                {{--<img :src='style.img' alt="Image Description">--}}
+                                {{--<span class="at-tick"><span><i class="fas fa-check"></i></span></span>--}}
+                            {{--</span>--}}
+                        {{--</label>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
     <div class="wt-securitysettings wt-tabsinfo wt-haslayout">
         <div class="wt-tabscontenttitle">
             <h2>{{{ trans('lang.chat_setting') }}}</h2>

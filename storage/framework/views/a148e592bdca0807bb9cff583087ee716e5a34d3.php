@@ -60,21 +60,21 @@
             <nav id="wt-navdashboard" class="wt-navdashboard">
                 <ul>
                     <?php if($role === 'admin'): ?>
-                        
-                            
-                            
-                                
-                                
-                            
-                            
-                                
-                                    
-                                    
-                                
-                                    
-                                    
-                            
-                        
+                        <li class="menu-item-has-children">
+                            <span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
+                            <a href="javascript:void(0)">
+                                <i class="ti-layers"></i>
+                                <span><?php echo e(trans('lang.manage_articles')); ?></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <hr>
+                                    <a href="<?php echo e(route('articles')); ?>"><?php echo e(trans('lang.articles')); ?></a></li>
+                                <li>
+                                    <hr>
+                                    <a href="<?php echo e(route('articleCategories')); ?>"><?php echo e(trans('lang.categories')); ?></a></li>
+                            </ul>
+                        </li>
                         
                             
                                 
@@ -170,25 +170,25 @@
                                 <span><?php echo e(trans('lang.home_page_settings')); ?></span>
                             </a>
                         </li>
-                        
-                            
-                            
-                                
-                                
-                            
-                            
-                                
-                                    
-                                    
-                                
-                                    
-                                    
-                                
-                                
-                                    
-                                    
-                            
-                        
+                        <li class="menu-item-has-children">
+                            <span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
+                            <a href="javascript:void(0)">
+                                <i class="ti-settings"></i>
+                                <span><?php echo e(trans('lang.settings')); ?></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <hr>
+                                    <a href="<?php echo e(route('adminProfile')); ?>"><?php echo e(trans('lang.acc_settings')); ?></a></li>
+                                <li>
+                                    <hr>
+                                    <a href="<?php echo e(url('admin/settings')); ?>"><?php echo e(trans('lang.general_settings')); ?></a>
+                                </li>
+                                <li>
+                                    <hr>
+                                    <a href="<?php echo e(route('resetPassword')); ?>"><?php echo e(trans('lang.reset_pass')); ?></a></li>
+                            </ul>
+                        </li>
                         <li class="menu-item-has-children">
                             <span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
                             <a href="javascript:void(0)">

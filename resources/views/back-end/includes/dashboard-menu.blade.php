@@ -59,21 +59,21 @@
             <nav id="wt-navdashboard" class="wt-navdashboard">
                 <ul>
                     @if ($role === 'admin')
-                        {{--<li class="menu-item-has-children">--}}
-                            {{--<span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>--}}
-                            {{--<a href="javascript:void(0)">--}}
-                                {{--<i class="ti-layers"></i>--}}
-                                {{--<span>{{ trans('lang.manage_articles') }}</span>--}}
-                            {{--</a>--}}
-                            {{--<ul class="sub-menu">--}}
-                                {{--<li>--}}
-                                    {{--<hr>--}}
-                                    {{--<a href="{{{ route('articles') }}}">{{ trans('lang.articles') }}</a></li>--}}
-                                {{--<li>--}}
-                                    {{--<hr>--}}
-                                    {{--<a href="{{{ route('articleCategories') }}}">{{ trans('lang.categories') }}</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</li>--}}
+                        <li class="menu-item-has-children">
+                            <span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
+                            <a href="javascript:void(0)">
+                                <i class="ti-layers"></i>
+                                <span>{{ trans('lang.manage_articles') }}</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <hr>
+                                    <a href="{{{ route('articles') }}}">{{ trans('lang.articles') }}</a></li>
+                                <li>
+                                    <hr>
+                                    <a href="{{{ route('articleCategories') }}}">{{ trans('lang.categories') }}</a></li>
+                            </ul>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="{{{ route('goPm') }}}" target="_blank">--}}
                                 {{--<i class="ti-desktop"></i>--}}
@@ -169,25 +169,25 @@
                                 <span>{{ trans('lang.home_page_settings') }}</span>
                             </a>
                         </li>
-                        {{--<li class="menu-item-has-children">--}}
-                            {{--<span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>--}}
-                            {{--<a href="javascript:void(0)">--}}
-                                {{--<i class="ti-settings"></i>--}}
-                                {{--<span>{{ trans('lang.settings') }}</span>--}}
-                            {{--</a>--}}
-                            {{--<ul class="sub-menu">--}}
-                                {{--<li>--}}
-                                    {{--<hr>--}}
-                                    {{--<a href="{{{ route('adminProfile') }}}">{{ trans('lang.acc_settings') }}</a></li>--}}
-                                {{--<li>--}}
-                                    {{--<hr>--}}
-                                    {{--<a href="{{{ url('admin/settings') }}}">{{ trans('lang.general_settings') }}</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<hr>--}}
-                                    {{--<a href="{{{ route('resetPassword') }}}">{{ trans('lang.reset_pass') }}</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</li>--}}
+                        <li class="menu-item-has-children">
+                            <span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
+                            <a href="javascript:void(0)">
+                                <i class="ti-settings"></i>
+                                <span>{{ trans('lang.settings') }}</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <hr>
+                                    <a href="{{{ route('adminProfile') }}}">{{ trans('lang.acc_settings') }}</a></li>
+                                <li>
+                                    <hr>
+                                    <a href="{{{ url('admin/settings') }}}">{{ trans('lang.general_settings') }}</a>
+                                </li>
+                                <li>
+                                    <hr>
+                                    <a href="{{{ route('resetPassword') }}}">{{ trans('lang.reset_pass') }}</a></li>
+                            </ul>
+                        </li>
                         <li class="menu-item-has-children">
                             <span class="wt-dropdowarrow"><i class="lnr lnr-chevron-right"></i></span>
                             <a href="javascript:void(0)">

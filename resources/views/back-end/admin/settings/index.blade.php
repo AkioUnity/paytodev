@@ -18,18 +18,18 @@
                             <li class="nav-item">
                                 <a class="{{{ \Request::route()->getName()==='settings/#wt-general'? 'active': '' }}}" data-toggle="tab" href="#wt-general">{{ trans('lang.general_settings') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-homepage'? 'active': '' }}}" data-toggle="tab" href="#wt-homepage">{{ trans('lang.homepage_settings') }}</a>
-                            </li>
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-homepage'? 'active': '' }}}" data-toggle="tab" href="#wt-homepage">{{ trans('lang.homepage_settings') }}</a>--}}
+                            {{--</li>--}}
                             <li class="nav-item">
                                 <a class="{{{ \Request::route()->getName()==='settings/#wt-email'? 'active': '' }}}" data-toggle="tab" href="#wt-email">{{ trans('lang.email_settings') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-payment'? 'active': '' }}}" data-toggle="tab" href="#wt-payment">{{ trans('lang.payment_settings') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-footer'? 'active': '' }}}" data-toggle="tab" href="#wt-footer">{{ trans('lang.footer_settings') }}</a>
-                            </li>
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-payment'? 'active': '' }}}" data-toggle="tab" href="#wt-payment">{{ trans('lang.payment_settings') }}</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-footer'? 'active': '' }}}" data-toggle="tab" href="#wt-footer">{{ trans('lang.footer_settings') }}</a>--}}
+                            {{--</li>--}}
                             <li class="nav-item">
                                 <a class="{{{ \Request::route()->getName()==='settings/#wt-register'? 'active': '' }}}" data-toggle="tab" href="#wt-register">{{ trans('lang.register_form_settings') }}</a>
                             </li>
@@ -42,30 +42,30 @@
                             <li class="nav-item">
                                 <a class="{{{ \Request::route()->getName()==='settings/#wt-clear-cache'? 'active': '' }}}" data-toggle="tab" href="#wt-clear-cache">{{ trans('lang.menu_clear_cache') }}</a>
                             </li>
-                            <li class="nav-item" v-on:click="displayColorSettings">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-inner-pages'? 'active': '' }}}"  data-toggle="tab" href="#wt-inner-pages">{{ trans('lang.inner_page_settings') }}</a>
-                            </li>
+                            {{--<li class="nav-item" v-on:click="displayColorSettings">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-inner-pages'? 'active': '' }}}"  data-toggle="tab" href="#wt-inner-pages">{{ trans('lang.inner_page_settings') }}</a>--}}
+                            {{--</li>--}}
                             {{--<li class="nav-item">--}}
                                 {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-import-updates'? 'active': '' }}}" data-toggle="tab" href="#wt-import-updates">{{ trans('lang.import_updates') }}</a>--}}
                             {{--</li>--}}
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-access-type'? 'active': '' }}}" data-toggle="tab" href="#wt-access-types">{{ trans('lang.site_access_type') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-chat-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-chat-settings">{{ trans('lang.chat_settings') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-project-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-project-settings">{{ trans('lang.project_settings') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-bank-account-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-bank-account-settings">{{ trans('lang.bank_detail') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-offline-order-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-offline-order-settings">{{ trans('lang.offline_order_settings') }}</a>
-                            </li>
-                            <li class="nav-item menu-setting-item" v-on:click="displayMenuSettings">
-                                <a class="{{{ \Request::route()->getName()==='settings/#wt-menu-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-menu-settings">{{ trans('lang.menu_settings') }}</a>
-                            </li>
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-access-type'? 'active': '' }}}" data-toggle="tab" href="#wt-access-types">{{ trans('lang.site_access_type') }}</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-chat-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-chat-settings">{{ trans('lang.chat_settings') }}</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-project-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-project-settings">{{ trans('lang.project_settings') }}</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-bank-account-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-bank-account-settings">{{ trans('lang.bank_detail') }}</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-offline-order-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-offline-order-settings">{{ trans('lang.offline_order_settings') }}</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="nav-item menu-setting-item" v-on:click="displayMenuSettings">--}}
+                                {{--<a class="{{{ \Request::route()->getName()==='settings/#wt-menu-settings'? 'active': '' }}}" data-toggle="tab" href="#wt-menu-settings">{{ trans('lang.menu_settings') }}</a>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                     <div class="wt-tabscontent tab-content">
