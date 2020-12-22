@@ -250,12 +250,12 @@
                                     
                             
                         
-                        
-                            
-                                
-                                
-                            
-                        
+                        <li>
+                            <a href="<?php echo e(url('/kyc')); ?>">
+                                <i class="ti-user"></i>
+                                <span><?php echo e(trans('ID Verification')); ?></span>
+                            </a>
+                        </li>
                         <?php if($role === 'employer'): ?>
                             <?php if(Helper::getAccessType() == 'both' || Helper::getAccessType() == 'jobs'): ?>
                                 <li class="menu-item-has-children">

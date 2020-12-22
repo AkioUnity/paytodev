@@ -1,0 +1,279 @@
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+#particles-js canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("/images/pinbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.choosenpic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+}
+
+.logo {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 500;
+}
+
+.portrait {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  width: 500;
+}
+
+.container {
+  padding: 10px 40px;
+  background-color: white;
+  /*height: 100%;*/
+  margin-bottom: 100px;
+  /* margin: 10px 20px; */
+}
+
+.kyctextbox {
+  width: 100%;
+  margin: 5px 5px;
+}
+
+.kycmargin {
+  margin-left: 20px;
+}
+
+.kycmargin-sm {
+  margin-left: 10px;
+}
+
+.kycradio1 {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.kycradio2 {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.kycmargintext {
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/* .kycheading {
+    text-align: right;
+} */
+
+.kycrow {
+  margin-top: 10px;
+  align-items: center;
+}
+
+.kycselect {
+  margin: 5px 5px;
+  width: 100%;
+  height: 42px;
+}
+
+.kycfile {
+  background-color: #1e90ff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 20px;
+}
+
+.kycsubmit {
+  background-color: #1e90ff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px 60px;
+}
+
+.kycalert {
+  margin-top: 75px;
+  text-align: center;
+}
+
+.kyctransition {
+  transition: 0.3s;
+}
+
+.kycunderlogo {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Open Sans";
+  margin-top: -32px;
+  margin-bottom: 42px;
+  margin-right: -20px;
+}
+
+@media (min-width: 768px) {
+  .kycunderlogo {
+    color: white;
+    text-align: center;
+    font-size: 21px;
+    font-family: "Open Sans";
+    margin-top: -42px;
+    margin-bottom: 42px;
+    margin-right: -20px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 400px;
+  height: 300px;
+}
+
+.dot-success {
+  height: 22px;
+  width: 22px;
+  background-color: rgb(58, 170, 58);
+  border-radius: 50%;
+}
+
+.dot-warning {
+  height: 22px;
+  width: 22px;
+  background-color: #ffc107;
+  border-radius: 50%;
+}
+
+.dot-danger {
+  height: 22px;
+  width: 22px;
+  background-color: rgb(170, 0, 0);
+  border-radius: 50%;
+}
+
+.dot-grey {
+  height: 22px;
+  width: 22px;
+  background-color: rgb(167, 167, 167);
+  border-radius: 50%;
+}
+
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
+}
+
+/* 
+
+for zoom animation 
+uncomment this part if you haven't added this code anywhere else
+
+*/
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.topic {
+  font-size: 24px;
+}
+
+@media (min-width: 768) {
+  .topic {
+    font-size: 30px;
+  }
+}

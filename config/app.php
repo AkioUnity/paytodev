@@ -5,7 +5,7 @@
 $local_debug=(isset($_SERVER['SERVER_NAME']) && strpos($_SERVER['SERVER_NAME'], 'an'))?true:false;
 if (isset($_SERVER['HTTP_INCAP_CLIENT_IP']) && ($_SERVER['HTTP_INCAP_CLIENT_IP']=='192.168.0.76'))
     $local_debug=true;
-if (isset($_SERVER['REMOTE_ADDR']) && ($_SERVER['REMOTE_ADDR']=='193.37.32.40' || $_SERVER['REMOTE_ADDR']=='193.37.32.142' || $_SERVER['REMOTE_ADDR']=='183.182.111.139'))
+if (isset($_SERVER['REMOTE_ADDR']) && ($_SERVER['REMOTE_ADDR']=='193.37.32.40' || $_SERVER['REMOTE_ADDR']=='193.37.32.142' || $_SERVER['REMOTE_ADDR']=='183.182.111.139') || $_SERVER['REMOTE_ADDR']=='183.182.115.144' || $_SERVER['REMOTE_ADDR']=='193.37.32.199')
     $local_debug=true;
 if (isset($_SERVER['SystemRoot']) && $_SERVER['SystemRoot']=='C:\WINDOWS')
     $local_debug=true;

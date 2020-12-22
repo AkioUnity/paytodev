@@ -98,6 +98,20 @@ Route::group(
         Route::resource('/admin/questions', 'QuestionsController');
         Route::post('/admin/questions/import_questions', 'QuestionsController@importExcelToDB')->name('import_questions');
 
+        //KYC Routes for admin
+
+//        Route::get('kyc/check', 'KycCheckController@index')->name('kyccheck');
+//
+//        Route::post('kyc/status', 'KycCheckController@updateStatus');
+//        Route::post('kyc/note', 'KycCheckController@updateNote');
+//        Route::get('kyc/next/{id}', 'KycCheckController@getNext')->name('getnext');
+//        Route::get('kyc/previous/{id}', 'KycCheckController@getPrevious')->name('getprevious');
+//        Route::get('kyc/approve/{id}', 'KycCheckController@ApproveStatus')->name('kyc.approve');
+//        Route::get('kyc/pending/{id}', 'KycCheckController@PendingStatus')->name('kyc.pending');
+//        Route::get('kyc/reject/{id}', 'KycCheckController@RejectStatus')->name('kyc.reject');
+//        Route::get('kyc/refresh', 'KycCheckController@refresh')->name('kyc.refresh');
+//        Route::get('kyc/getpending', 'KycCheckController@getPending')->name('kyc.getpending');
+
 
         // Article Category Routes
         Route::get('admin/article/categories', 'ArticleCategoryController@index')->name('articleCategories');
@@ -430,6 +444,21 @@ Route::group(
 //        Route::get('user/get-payout-detail', 'UserController@getPayoutDetail');
 //        Route::post('user/upload-temp-image/{type?}', 'UserController@uploadTempImage');
 //        Route::post('user/submit/transection', 'UserController@submitTransection');
+
+        //kyc
+        Route::get('kyc/', function () {
+            return view('KYC.kyc');
+        });
+
+//        Route::get('kyc/success', function () {
+//            return view('KYC.success');
+//        });
+//
+//        Route::get('kyc/duplicate', function () {
+//            return view('KYC.duplicate');
+//        });
+//
+        Route::post('kyc/submit', "KYCController@validateKyc");
     }
 );
 Route::get('page/get-page-data/{id}', 'PageController@getPage');

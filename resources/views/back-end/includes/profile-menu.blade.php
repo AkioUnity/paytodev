@@ -153,6 +153,12 @@
                         {{--<li><a href="{{{ route('manageAccount') }}}">{{ trans('lang.acc_settings') }}</a></li>--}}
                     {{--</ul>--}}
                 {{--</li>--}}
+                <li>
+                    <a href="{{{ url('/kyc') }}}">
+                        <i class="ti-user"></i>
+                        <span>{{ trans('ID Verification') }}</span>
+                    </a>
+                </li>
                 @if ($role === 'employer')
                     @if (Helper::getAccessType() == 'both' || Helper::getAccessType() == 'jobs')
                         <li>
